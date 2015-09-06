@@ -1,5 +1,5 @@
 # Description
-This repository for Rubicon interview programming exam question#1 - Write a program to process a file:
+This repository isfor Rubicon interview programming exam question#1 - Write a program to process a file:
 1. To support a REST GET call.
     - The web service accepts a number, n, as input and returns the first n Fibonacci numbers, starting from 0. I.e. given n = 5, appropriate output would represent the sequence "0 1 1 2 3".
     - Given a negative number, it will respond with an appropriate error.
