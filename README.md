@@ -1,4 +1,5 @@
 # Description
+
 This repository isfor Rubicon interview programming exam question#1 - Write a program to process a file:
 1. To support a REST GET call.
     - The web service accepts a number, n, as input and returns the first n Fibonacci numbers, starting from 0. I.e. given n = 5, appropriate output would represent the sequence "0 1 1 2 3".
@@ -68,5 +69,5 @@ The response body will be:
 0 1 1 2 3 5 8 13 21 34
 ```
 
-For invalid URL, invalid length like negative number or non-number string, 404 error will be returned.
+For invalid URL, or invalid length like negative number or non-number string, 404 error will be returned.
 
