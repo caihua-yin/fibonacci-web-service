@@ -18,6 +18,7 @@ OK
 Execute functional_test.py to run the functional test for this Fibonacci web service as follows:
 ```
 ./functional_test.py
+Host: localhost, Port: 8888
 Test normal cases...
 [SUCCESS] Fibonacci request (length=0) functional testing passed.
 [SUCCESS] Fibonacci request (length=1) functional testing passed.

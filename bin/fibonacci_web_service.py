@@ -2,7 +2,6 @@
 
 import os
 import sys
-import time
 import getopt
 
 # Add module search path
@@ -76,15 +75,9 @@ class FibonacciHandler(RequestHandler):
             result = fibonacci.fibonacci_non_recursive(int(fibonacci_length), base=FibonacciHandler.cache)
         self.write(' '.join(str(item) for item in result))
 
-class CacheHandler(RequestHandler):
-    def get(self):
-        self.write("Cache Size: %d\n" % len(FibonacciHandler.cache))
-        #self.write(', '.join(str(item) for item in CACHE))
-
 def make_application():
     return Application([
         url(r"/fibonacci/([0-9]+)", FibonacciHandler),
-        url(r"/fibonacci/cache", CacheHandler),
     ])
 
 def start(port, cache_size):

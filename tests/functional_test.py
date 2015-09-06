@@ -1,5 +1,6 @@
 #!/usr/bin/python
 import sys
+import os
 import getopt
 
 # Add module search path
@@ -66,6 +67,7 @@ def test(host, port):
     """
     Functional test trigger method
     """
+    print "Host: %s, Port: %d" % (host, port)
     http_client = httpclient.HTTPClient()
 
     # Normal cases
