@@ -25,7 +25,7 @@ sudo python setup.py install
 ## Start the server
 The Fibonacci web service server can be simply started by running fibonacci_web_service.py as follows:
 ```
-cd bin/
+cd fibonacci-web-service/bin/
 ./fibonacci_web_service.py
 Starting the server...
 Listen on 8888...
