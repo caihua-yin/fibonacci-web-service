@@ -62,7 +62,7 @@ EXAMPLES
 ```
 
 ## Send RESTful Request
-Open a web broswer and type URL as follows (10 is the fibonacci sequence length to request):
+Open a web broswer and type URL as follows (replace the IP with the real one of your server, and 10 is the fibonacci sequence length to request):
 ```
 http://10.32.118.189:8888/fibonacci/10
 ```
