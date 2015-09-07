@@ -69,10 +69,11 @@ class FibonacciHandler(RequestHandler):
         """
         Handle get request
         """
-        if fibonacci_length <= len(FibonacciHandler.cache):
-            result = FibonacciHandler.cache[:fibonacci_length]
+        length = int(fibonacci_length)
+        if length <= len(FibonacciHandler.cache):
+            result = FibonacciHandler.cache[:length]
         else:
-            result = fibonacci.fibonacci_non_recursive(int(fibonacci_length), base=FibonacciHandler.cache)
+            result = fibonacci.fibonacci_non_recursive(length, base=FibonacciHandler.cache)
         self.write(' '.join(str(item) for item in result))
 
 def make_application():
