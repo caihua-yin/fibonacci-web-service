@@ -15,6 +15,7 @@ All of the runnable scripts has been tested at Linux machine with Python 2.6.8, 
 ## Install Tornado
 The Fibonacci web service leverage [Tornado](http://www.tornadoweb.org/en/stable/index.html) Python web framework, which is an asynchronous networking library. Its source code pacakge (tornado-4.2.1.tar.gz) is put together with this Fibonacci web service repository. Follow the steps below to install it in the machine that are going to run the Fibonacci web service.
 ```
+cd fibonacci-web-service
 tar xvzf tornado-4.2.1.tar.gz
 cd tornado-4.2.1
 python setup.py build
@@ -24,7 +25,7 @@ sudo python setup.py install
 ## Start the server
 The Fibonacci web service server can be simply started by running fibonacci_web_service.py as follows:
 ```
-cd fibonacci-web-service/bin/
+cd bin/
 ./fibonacci_web_service.py
 Starting the server...
 Listen on 8888...
