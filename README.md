@@ -9,6 +9,8 @@ This repository isfor Rubicon interview programming exam question#1 - Write a pr
 4. While this project is admittedly trivial, approach it as representing a more complex problem that you'll have to put into production and maintain for 5 years.
 5. Target to finish this in 2 days.
 
+All of the runnable scripts has been tested at Linux machine with Python 2.6.8, which is my devkit.
+
 # Deploy and Run
 ## Install Tornado
 The Fibonacci web service leverage [Tornado](http://www.tornadoweb.org/en/stable/index.html) Python web framework, which is an asynchronous networking library. Its source code pacakge (tornado-4.2.1.tar.gz) is put together with this Fibonacci web service repository. Follow the steps below to install it in the machine that are going to run the Fibonacci web service.
