@@ -1,5 +1,5 @@
 # Description
-The tests directory maintains the unit testing and functional testing scripts.
+The tests directory maintains the unit testing and functional testing scripts. The information below shows how to run unit test and functional test. For more detail, refer to doc/fibonacci-web-service.docx.
 
 # Run Unit Test
 Execute unit_test.py to run the unit test for fibonacci library as follows:
@@ -26,6 +26,5 @@ Test normal cases...
 [SUCCESS] Fibonacci request (length=300) functional testing passed.
 [SUCCESS] Fibonacci request (length=2000) functional testing passed.
 ```
-# Further Test
-TBD
+For negative cases like negative or invalid length, or invalid URL, 404 Error are expected, and they can be tested by web browser manually. They are not automated by functional_test.py currently due to time limitation.
 

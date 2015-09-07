@@ -1,13 +1,15 @@
 # Description
-
 This repository isfor Rubicon interview programming exam question#1 - Write a program to process a file:
+
 1. To support a REST GET call.
-    * The web service accepts a number, n, as input and returns the first n Fibonacci numbers, starting from 0. I.e. given n = 5, appropriate output would represent the sequence "0 1 1 2 3".
-    * Given a negative number, it will respond with an appropriate error.
+   - The web service accepts a number, n, as input and returns the first n Fibonacci numbers, starting from 0. I.e. given n = 5, appropriate output would represent the sequence "0 1 1 2 3".
+   - Given a negative number, it will respond with an appropriate error.
 2. Include whatever instructions are necessary to build and deploy/run the project. "deploy/run" means the web service is accepting requests and responding to them as appropriate.
 3. Add enough unit tests. add some functional tests. list all other tests you would think of.
 4. While this project is admittedly trivial, approach it as representing a more complex problem that you'll have to put into production and maintain for 5 years.
 5. Target to finish this in 2 days.
+
+All of the runnable scripts has been tested at Linux machine with Python 2.6.8, which is my devkit.
 
 # Deploy and Run
 ## Install Tornado
@@ -72,7 +74,7 @@ The response body will be:
 For invalid URL, or invalid length like negative number or non-number string, 404 error will be returned.
 
 # Documentation 
-For the 5-year maintenance purpose, a word document doc/fibonacci-web-service.docx is created to cover following table of contents.
+For the 5-year maintenance purpose, a word document doc/fibonacci-web-service.docx is created to cover following table of contents. And the content is also dumped to the wiki of this repository.
 ```
 - Architecture
 - Design and Implementation
