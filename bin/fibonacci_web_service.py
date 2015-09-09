@@ -29,9 +29,9 @@ OPTIONS
     -c, --cache <cache size>
         Specify how many cache (keep first xxx number in memory) the server will use to speed up the request handling
         Cache will be disabled if not specified this option. Below gives some cache size for reference:
-        * Cache first 1000 number - need about 103KB memory
-        * Cache first 2000 number - need about 409KB memory
-        * Cache first 3000 number - need about 919KB memory
+        * Cache first 1000 number - need about 244KB additional memory
+        * Cache first 2000 number - need about 840KB additional memory
+        * Cache first 3000 number - need about 1756KB additional memory
 
 EXAMPLES
     # Start the server with default port 8888 and with cache disabled
@@ -56,6 +56,7 @@ def getopts():
 class FibonacciHandler(RequestHandler):
     # Static variable definition
     cache = []
+    cache_in_str = []
 
     @classmethod
     def initialize_cache(cls, cache_size):
@@ -63,18 +64,25 @@ class FibonacciHandler(RequestHandler):
         Initialize cache according to specified size
         """
         print "Initialize cache (size: %d)..." % cache_size
-        cls.cache= fibonacci.fibonacci_non_recursive(cache_size)
+        # The int list cache is for requested length is larger than cache,
+        # so the furthr calculation can base on it
+        cls.cache = fibonacci.fibonacci_non_recursive(cache_size)
+
+        # The string list cache for the requested length is not larger than cache,
+        # so the response can be constructed directly from it.
+        # Maintain this list can avoid the int to string convertion for every request handling
+        cls.cache_in_str = [str(item) for item in cls.cache]
 
     def get(self, fibonacci_length):
         """
         Handle get request
         """
         length = int(fibonacci_length)
-        if length <= len(FibonacciHandler.cache):
-            result = FibonacciHandler.cache[:length]
+        if length <= len(FibonacciHandler.cache_in_str):
+            self.write(' '.join(FibonacciHandler.cache_in_str[:length]))
         else:
             result = fibonacci.fibonacci_non_recursive(length, base=FibonacciHandler.cache)
-        self.write(' '.join(str(item) for item in result))
+            self.write(' '.join(str(item) for item in result))
 
 def make_application():
     return Application([
