@@ -1,4 +1,7 @@
 #!/usr/bin/python
+"""
+The server of fibonacci web service.
+"""
 
 import os
 import sys
@@ -54,6 +57,9 @@ def getopts():
         usage()
 
 class FibonacciHandler(RequestHandler):
+    """
+    Fibonacci Handler
+    """
     # Static variable definition
     cache = []
     cache_in_str = []
@@ -85,6 +91,9 @@ class FibonacciHandler(RequestHandler):
             self.write(' '.join(str(item) for item in result))
 
 def make_application():
+    """
+    Make the application
+    """
     return Application([
         url(r"/fibonacci/([0-9]+)", FibonacciHandler),
     ])

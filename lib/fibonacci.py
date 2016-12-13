@@ -58,7 +58,7 @@ def fibonacci_non_recursive(length, base=None):
         else:
             result = list(base)
             index = len(result) + 1
-        
+
     while index <= length:
         if index == 0:
             pass
@@ -70,4 +70,4 @@ def fibonacci_non_recursive(length, base=None):
             result.append(result[-2] + result[-1])
         index += 1
     return result
-        
+

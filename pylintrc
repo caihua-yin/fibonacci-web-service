@@ -5,7 +5,7 @@
 
 # Python code to execute, usually for sys.path manipulation such as
 # pygtk.require().
-#init-hook=
+init-hook="import sys;sys.path.append('lib')"
 
 # Profiled execution.
 profile=no
@@ -33,7 +33,7 @@ load-plugins=
 # can either give multiple identifier separated by comma (,) or put this option
 # multiple time (only on the command line, not in the configuration file where
 # it should appear only once).
-#disable=
+disable=abstract-method,arguments-differ,too-many-public-methods
 
 
 [REPORTS]
@@ -115,7 +115,7 @@ no-docstring-rgx=__.*__
 [VARIABLES]
 
 # Tells whether we should check for unused import in __init__ files.
-init-import=no
+init-import=yes
 
 # A regular expression matching the beginning of the name of dummy variables
 # (i.e. not used).
