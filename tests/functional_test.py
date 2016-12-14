@@ -2,6 +2,8 @@
 import sys
 import os
 import getopt
+import subprocess
+import time
 
 # Add module search path
 sys.path.append('../lib')
@@ -47,6 +49,12 @@ def getopts():
         return opts
     except getopt.GetoptError:
         usage()
+
+def prepare():
+    """
+    Prepare environment for functional testing
+    """
+    return subprocess.Popen("../bin/fibonacci_web_service.py", stderr=subprocess.STDOUT)
 
 def test_case(host, port, length, expect_response_body, 
                     expect_response_code=200):
@@ -112,7 +120,16 @@ def main():
     if cmd == "help":
         usage()
     elif cmd == "test":
+        # Start server
+        server = prepare()
+        time.sleep(1)
+
+        # Execute test
         test(host, port)
+
+        # Stop server
+        server.terminate()
+        server.wait()
     else:
         usage()
         sys.exit(1)
