@@ -3,7 +3,9 @@ FROM debian:jessie
 MAINTAINER Caihua Yin <alend.yin@gmail.com>
 
 RUN apt-get update && \
-    apt-get install -y python build-essential python-dev
+    apt-get install -y python build-essential python-dev && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
 
 COPY tornado-4.2.1.tar.gz /opt/fibonacci-web-service/
 RUN cd /opt/fibonacci-web-service/ && \

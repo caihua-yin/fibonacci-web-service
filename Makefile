@@ -1,3 +1,6 @@
+SERVICE_NAME ?= store-service
+DOCKER_TAG ?= latest
+
 all: deps check test image
 
 ## Static Analysis ##
@@ -7,12 +10,16 @@ check: deps
 	pylint --rcfile=pylintrc bin/* lib/*
 
 ## Pre-Deployment Testing ##
-test:
+test: check
 	make -C test
 
 ## Docker Image Build ##
-image:
-	docker build --pull -t yinc2/fibonacci-web-service:latest -f Dockerfile .
+image: test
+	docker build --pull -t yinc2/$(SERVICE_NAME):$(DOCKER_TAG) -f Dockerfile .
+
+## Docker Image Push ##
+push: image
+	docker push yinc2/$(SERVICE_NAME):$(DOCKER_TAG)
 
 clean:
 	rm -f bin/*.pyc lib/*.pyc test/*.pyc
